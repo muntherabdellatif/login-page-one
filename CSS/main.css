@@ -157,18 +157,18 @@ header .bar  .search label {
 /* end header  */
 /* start contant  */
 .contant {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(500px , 1fr));
     margin: 50px;
 }
 .contant .discription {
 
 }
-.contant .discription h1 {
+.contant .head  h1 {
    color: white;
    font-size: 50px;
 }
-.contant .discription h1 span {
+.contant .head h1 span {
     color: var(--color1);
 }
 .contant .discription p {
@@ -191,11 +191,13 @@ header .bar  .search label {
     -o-border-radius: 14px;
 }
 .login {
+    grid-area: 1/2/3/3 ;
     background-color: #0000006e;
     padding: 20px;
     width: 350px;
+    margin: auto;
 }
-.login h2 {
+.login  h2 {
     padding: 10px 20px;
     background-color: white;
     color: var(--color1);
@@ -251,5 +253,33 @@ header .bar  .search label {
 }
 .login .logo i {
     cursor: pointer;
+}
+@media screen and (max-width:992px) {
+    .contant {
+        margin-top: 50px;
+        grid-template-columns: 1fr ;
+        gap: 100px;
+    }
+    .login {
+        grid-area: initial;
+        order: 2;
+        margin-bottom: 50px;
+    }
+    .contant .head  {
+        order: 1;
+    }
+    .contant .head  h1 {
+        text-align: center;
+    }
+    .contant .discription {
+        order: 3;
+    }
+    .contant .discription p {
+        text-align: center;
+    }
+    .contant .discription button {
+        display: block;
+        margin: auto;
+    }
 }
 /* end contant  */
